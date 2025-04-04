@@ -5,6 +5,7 @@ public class TestObject {
 		// user1 & user2 are not object, they are the reference varaibles for an object
 		User user1 = new User(200, "Raj"); // id=200, name=Raj
 		User user2 = new User(300, "Atharv"); // id=300, name=Atharv
+		User.counter = 22;
 //		user1.id = 200; // user1.id = 200, user1.name = null;
 //		user2.id = 300; // user2.id = 300, user2.name = null;
 //		user1.name = "Atharv"; // user1.id = 200, user1.name = Atharv

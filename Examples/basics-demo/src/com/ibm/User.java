@@ -3,6 +3,7 @@ package com.ibm;
 public class User {
 	int id; // fields
 	String name; // fields
+	static int counter = 5;
 	
 	/*
 	 * If a class doesn't have a constructor compiler creates default constructor i.e., User()
@@ -16,6 +17,6 @@ public class User {
 	}
 	// a method to display id & name
 	void display() {
-		System.out.println("Id = "+id+", Name = "+name);
+		System.out.println("Id = "+id+", Name = "+name+", Counter = "+counter);
 	}
 }
