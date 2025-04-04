@@ -75,7 +75,18 @@ public class TestFundamentals {
 		break;
 		default : System.out.println("Invalid option");
 		}
-		
+		/*
+		 * Loops: when you want same statements to executed until the condition is true
+		 * or when you want same statements to execute for specific number of times
+		 * types of loops - for, while, do-while
+		 * 
+		 */
+		// for loop is better for arrays 
+		String[] fruits = {"apple" ,"mango", "orange"};
+		System.out.println("Size of an array = "+fruits.length);
+		for(int i = 0; i < fruits.length; i++) { // i = 3, 3 < 3
+			System.out.println("Fruits at position "+(i+1)+" = "+fruits[i]);
+		}
 	}
 
 }
