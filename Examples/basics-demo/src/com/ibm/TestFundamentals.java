@@ -63,6 +63,19 @@ public class TestFundamentals {
 		 *  5 -> default value like no valid option thank you
 		 */
 		
+		String option = "8";
+		switch(option) {
+		case "1": System.out.println("have a nice coffee");
+		break;
+		case "2": System.out.println("have a nice tea");
+		break;
+		case "3": System.out.println("have a nice cold drink");
+		break;
+		case "4": System.out.println("have a hot water");
+		break;
+		default : System.out.println("Invalid option");
+		}
+		
 	}
 
 }
