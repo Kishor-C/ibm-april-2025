@@ -12,5 +12,13 @@ public class TestEncapsulation {
 		 * ex: 
 		 * int id = user1.getUserId();
 		 */
+		User user2 = new User(4567, "Vijay");
+		System.out.println(user1);
+		System.out.println(user2);
+		/*
+		 * 
+		 * toString() is automatically called when you print the object, most of the classes
+		 * override toString to represent the object details 
+		 */
 	}
 }
