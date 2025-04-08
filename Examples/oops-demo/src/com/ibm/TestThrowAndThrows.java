@@ -8,12 +8,12 @@ import java.util.Scanner;
 
 public class TestThrowAndThrows {
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter filename");
-		try {
-			// FileReader throws FileNotFoundException, close the reader & buffer in finally
+		// try with resource closing syntax automatically closes the resources, no need to close in finally 
+		// like: FileReader, FileWriter, BufferedWriter, BufferedReader, Connection, InputStream and etc.
+		try (Scanner scan = new Scanner(System.in);
 			FileReader reader = new FileReader(scan.next());
-			BufferedReader buffer = new BufferedReader(reader); // loads the entire file into buffer
+			BufferedReader buffer = new BufferedReader(reader); ) {
 			int ch = 0;
 			int loopCounter = 0;
 //			// -1 is returned when there are no characters to read
@@ -34,8 +34,7 @@ public class TestThrowAndThrows {
 		} catch(IOException  e) { //IOException can handle FileNotFoundException
 			System.err.println(e.getMessage());
 			System.err.println("Unable to read the file");
-		}
+		} 
 		System.out.println("DONE");
 	}
-	
 }
