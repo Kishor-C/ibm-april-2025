@@ -31,7 +31,7 @@ public class TestInnerClasses {
 			}
 		};
 		new Thread(r).start();
-		// local inner class will have name, which is avaiable only inside the method
+		// local inner class will have name, which is available only inside the method
 		// class L is written inside method
 		class L {
 			void m1() { System.out.println("m1() inside L"); }
