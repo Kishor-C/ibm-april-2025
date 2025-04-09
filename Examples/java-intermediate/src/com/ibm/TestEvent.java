@@ -13,17 +13,15 @@ public class TestEvent {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
+		Comparator<Event> compareEndDateAsc = (o1, o2) -> o1.getEndDate().compareTo(o2.getEndDate());
 		
-		Comparator<Event> compareEndDateAsc = new Comparator<Event>() {
-			@Override
-			public int compare(Event o1, Event o2) {
-				// TODO Auto-generated method stub
-				return o1.getEndDate().compareTo(o2.getEndDate());
-			}
-		};
 		// create another reference of Comparator to sort based on the name & pass that to TreeSet constructor
+		Comparator<Event> compareNameAsc = (o1, o2) -> o1.getEventName().compareTo(o2.getEventName());
 		
-		Set<Event> events = new TreeSet<Event>(compareEndDateAsc); // customized sorting
+		
+		// java 8 provided functional programming with lambda expression, where you 
+		// directly pass functions as parameters
+		Set<Event> events = new TreeSet<Event>(compareNameAsc); // customized sorting
 		events.add(new Event(788, "Wedding", LocalDate.parse("2025-04-25"), LocalDate.parse("2025-04-26")));
 		events.add(new Event(688, "Training", LocalDate.parse("2025-04-22"), LocalDate.parse("2025-04-25")));
 		events.add(new Event(898, "Birthday", LocalDate.parse("2025-04-20"), LocalDate.parse("2025-04-20")));
