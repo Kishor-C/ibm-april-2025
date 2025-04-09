@@ -18,11 +18,8 @@ interface A {
 }
 public class TestJava8Features {
 	public static void main(String[] args) {
-		/*
-		 * Java 8 has introduced new date & time classes in java.time package
-		 * LocalDate, LocalTime, LocalDateTime - follows ISO standard
-		 * ISO format of Date : yyyy-MM-dd
-		 */
+		/* Java 8 has introduced new date & time classes in java.time package
+		 * LocalDate, LocalTime, LocalDateTime - follows ISO standard, ISO format of Date : yyyy-MM-dd */
 		// current date
 		LocalDate today = LocalDate.now();
 		System.out.println("Today = "+today);
