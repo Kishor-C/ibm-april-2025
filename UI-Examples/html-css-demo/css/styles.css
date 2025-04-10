@@ -1,8 +1,23 @@
-h1 {
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css");
+
+/* .primary {
     color: blue;
     font-family: 'sans-serif';
 }
-h2 {
+.danger {
     color: brown;
     font-family: 'sans-serif';
 }
+.secondary {
+    color: grey;
+}
+
+.btn-primary {
+    background-color: blue; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+} */
