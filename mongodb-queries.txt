@@ -1,0 +1,10 @@
+db.employee.insertOne({_id:1, name:"Raj", dob: new ISODate("2000-01-01")});
+db.employee.insertOne({_id:2, name:"Vijay", dob: new ISODate("2000-0201")});
+db.employee.insertOne({_id:3, name:"Raj", dob: new ISODate("2002-03-01")});
+db.employee.insertOne({_id:4, name:"Vijay", dob: new ISODate("2001-03-01")});
+
+
+db.employee.insertMany([ 
+	{_id:5, name:"Atharva", dob: new ISODate("2022-02-01")},
+	{_id:6, name:"Siddharth", dob: new ISODate("2019-06-01")},
+]);
