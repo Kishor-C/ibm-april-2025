@@ -8,3 +8,21 @@ db.employee.insertMany([
 	{_id:5, name:"Atharva", dob: new ISODate("2022-02-01")},
 	{_id:6, name:"Siddharth", dob: new ISODate("2019-06-01")},
 ]);
+
+
+db.employee.find();
+db.employee.find({name:"Raj"});
+db.employee.find({_id:2});
+
+
+db.employee.updateOne({_id:1}, {$set:{name:"Vijay"}});
+db.employee.find();
+db.employee.updateMany({name:"Vijay"}, {$set:{name:"Raj"}});
+
+
+db.employee.deleteOne({_id:1});
+db.employee.deleteMany({name:"Raj"}); // documents whose name is Raj will be deleted
+db.employee.deleteMany({}); // all the documents will be deleted
+
+
+
