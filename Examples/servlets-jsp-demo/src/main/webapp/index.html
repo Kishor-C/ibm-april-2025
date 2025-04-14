@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>This is an index file</h1>
+	<h2>A link sends GET request</h2>
+	<a href = "GreetServlet?name=Kishor">Hello</a>
+	<hr />
+	<h2>A form that sends GET request by default</h2>
+	<form action = "GreetServlet">
+		<input type = "text" name = "name"> <br />
+		<input type = "submit" value = "Hello">
+	</form>
+	<h2>A form that sends POST request </h2>
+	<form action = "GreetServlet" method = "post">
+		<input type = "text" name = "name"> <br />
+		<input type = "submit" value = "Hello">
+	</form>
+</body>
+</html>
