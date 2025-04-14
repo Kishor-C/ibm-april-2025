@@ -1,10 +1,12 @@
 package com.ibm;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +15,34 @@ import com.mysql.cj.jdbc.Driver;
 // DAO layer that will have only DB logic
 public class EmployeeDao {
 
+	// saveEmployee method
+	public int saveEmployee(Employee employee) { // employee [id = 0, name = "Raj", dob = "2000-10-11" ]
+		int status = 0;
+		try {
+			Connection con = DBUtil.establishConnection();
+			String query = "insert into employee(name, dob) values(?, ?)";
+			// Statement.RETURN_GENERATED_KEYS will return the generated key when insert is executed
+			PreparedStatement statement = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+			statement.setString(1, employee.getName()); 
+			statement.setDate(2, Date.valueOf(employee.getDob())); //java.sql.Date.valueOf(LocalDate)
+			statement.executeUpdate();
+			
+			// to get that auto-generated key 
+			ResultSet result = statement.getGeneratedKeys();
+			while(result.next()) {
+				status = result.getInt(1);
+			}
+			statement.close();
+			
+			con.close();
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} catch(ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		return status;
+	}
+	
 	// get all the employee objects and return in the List<Employee> format
 	public List<Employee> findAllEmployees() {
 		List<Employee> list = new ArrayList<>(); // Java 7 onwards you don't need to specify type at the right-side
@@ -20,13 +50,9 @@ public class EmployeeDao {
 		// cut the main method entire logic & paste before return list, then change the code to create Employee
 		// object & adding each employee to the list
 		try {
-			String username = "root";
-			String password = "root";
-			String url = "jdbc:mysql://localhost:3306/ibm_db";
-			String driverClassName = Driver.class.getName();
-			Class.forName(driverClassName); //com.mysql.cj.jdbc.Driver
+			
 			// All the JDBC apis are imported from java.sql package
-			Connection con = DriverManager.getConnection(url, username, password);
+			Connection con = DBUtil.establishConnection();
 			String query = "select * from employee";
 			PreparedStatement statement = con.prepareStatement(query); // no ? so no need to set value
 			ResultSet result = statement.executeQuery();
