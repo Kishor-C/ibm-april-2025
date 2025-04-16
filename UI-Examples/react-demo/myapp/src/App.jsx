@@ -53,11 +53,29 @@ function EventHandlerDemo() {
     <button onClick = {e => setCounter(counter + 3)} className="btn btn-primary">Button3</button> <br />
   </div>)
 }
+function FormDemo() {
+  let [name, setName] = useState("");
+  let [age, setAge] = useState("");
+  let handleSubmit = (e) => {
+    e.preventDefault(); // prevent the reload
+    console.log(`Name = ${name}, Age = ${age}`);
+  }
+  return (<div>
+    <h2>Form Demo</h2>
+    <form onSubmit={handleSubmit}>
+      <input type = "text" onChange = {e => setName(e.target.value)} 
+        placeholder="Enter Name" className="form-control-lg"/> <br /> <br />
+      <input type = "number" onChange = {e => setAge(e.target.value)} 
+      placeholder="Enter Age" className="form-control-lg"/> <br /> <br />
+      <input type = "submit" value = "Submit" className="btn btn-primary btn-lg"/>
+    </form>
+  </div>)
 
+}
 function App() {
   return (<div className="container-fluid">
     <h1 className="alert alert-primary text-center">This is a root component</h1>
-    <EventHandlerDemo />
+    <FormDemo />
    
   </div>);
 }
