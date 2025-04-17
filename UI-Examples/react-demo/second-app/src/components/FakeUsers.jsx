@@ -12,6 +12,9 @@ export function FetchAllUsers() {
         .then(res => setUser(res.data))
         .catch(err => console.log(err));
     }
+    let getAllUsers = (e) => {
+        axios.get(URL).then(res => setUsers(res.data)).catch(err=>console.log(err));
+    } // display id, name, username, phone, street, city, zipcode in table format
     return (<div>
         <h2>Fetch users from json placeholder</h2><hr />
         <input type = "number" placeholder='Enter id' 
