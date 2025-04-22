@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Welcome to Spring Web MVC</h1>
+	<div>
+		<a href = "spring/employee/testing">Greet</a>
+	</div>
+	<div>
+		<h2>Employee Registration Form</h2>
+		<form action = "spring/employee/save" method = "post">
+			Enter name<input type = "text" name = "name"><br/>
+			Enter dob<input type = "date" name = "dob"><br/>
+			<input type = "submit" value = "Save">
+		</form>
+		<p>
+			<b>Note:</b>Form works only if you have a controller to handle the request
+		</p>
+	</div>
+</body>
+</html>

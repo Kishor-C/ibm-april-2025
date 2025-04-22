@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<!-- <bean id = "b3" class = "com.ibm.Locations">
+		<property name = "cities">
+			<list>
+				<value>Bangalore</value>
+				<value>Hyderabad</value>
+				<value>Chennai</value>
+				<value>Mumbai</value>
+				<value>Delhi</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id = "b1" class = "com.ibm.Test1" init-method="setup" destroy-method="cleanup"></bean>
+	<bean id = "b2" class = "com.ibm.Test2" ></bean>
+
+	 bean tag creates the object in the spring container
+	<bean id="ds" class="com.ibm.Datasource">
+		<property name="username" value="admin"></property>
+		<property name="password" value="admin@123"></property>
+	</bean>
+	 bean tag creates the object in the spring container
+	<bean id="ds2" class="com.ibm.Datasource">
+		<constructor-arg index="0" value="root"></constructor-arg>
+		<constructor-arg index="1" value="root@123"></constructor-arg>
+	</bean>
+	 bean for AccountDao1
+	
+	<bean id="accountDao" class="com.ibm.AccountDao1" >
+		<constructor-arg name="datasource"  ref="ds"></constructor-arg>	
+		<property name="datasource" ref = "ds"></property>
+	</bean>
+	
+	 -->
+	
+</beans>	
