@@ -1,33 +1,50 @@
 package com.ibm;
 
-import java.time.LocalDateTime;
+
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ibm.buisness.EmployeeService;
+
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/employee")
 public class MyController {
 
-	@GetMapping(path = "/testing")
-	public ResponseEntity<Object> greet() {
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("message", "Welcome to REST API");
-		map.put("dateTime", LocalDateTime.now());
-		return ResponseEntity.status(200).body(map);
-	}
-	@PostMapping(path = "/save", consumes = MediaType.APPLICATION_JSON_VALUE)
+	@Autowired
+	private EmployeeService service;
+	// send HTTP post request with JSON to save the data
+	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> save(@RequestBody Employee employee) {
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("message", "Employee "+employee.getName()+" is processed");
-		map.put("emp", employee);
-		return ResponseEntity.status(201).body(map);
+		Employee savedEntity = service.saveOrUpdate(employee);
+		return ResponseEntity.status(201).body(savedEntity);
+	}
+	// send HTTP get request to get all the employees in JSON 
+	@GetMapping
+	public ResponseEntity<Object> find() {
+		List<Employee> list = service.findEmployees();
+		return ResponseEntity.status(200).body(list);
+	}
+	// send HTTP get with dynamic path to get a particular employee or an error message
+	@GetMapping(path = "/{id}") // it can accept any value like /100 /200 /300, you can also use /{id}/{name}
+	public ResponseEntity<Object> get(@PathVariable("id") int empId) {
+		try {
+			Employee emp = service.findEmployee(empId);
+			return ResponseEntity.status(200).body(emp);
+		} catch(Exception e) {
+			Map<String, String> errorMap = new HashMap<String, String>();
+			errorMap.put("message", e.getMessage()); // to create error message in JSON format we are using Map
+			return ResponseEntity.status(404).body(errorMap);
+		}
 	}
 }
