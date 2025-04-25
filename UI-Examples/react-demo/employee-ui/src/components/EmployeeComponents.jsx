@@ -16,8 +16,8 @@ export function EmployeeSearchById() {
         .catch((response)=>{setError(response.response.data); console.log(response); setEmployee(undefined)})
     }
     // UI element
-    return (<div className="w-50">
-        <h2 className="w-25 alert alert-secondary text-primary">
+    return (<div>
+        <h2 className="w-25 alert alert-secondary text-primary text-center">
             Search Employee
         </h2>
        

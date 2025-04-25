@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -25,6 +26,16 @@ public class MyController {
 
 	@Autowired
 	private EmployeeService service;
+	
+	
+	@Value("${server.port}") // it supplies the server port to this variable
+	private int port;
+	
+	@GetMapping(path = "/test/greet")
+	public ResponseEntity<Object> greet() {
+		return ResponseEntity.status(200).body("microservice running in "+port+" number");
+	}
+	
 	// send HTTP post request with JSON to save the data
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Object> save(@RequestBody Employee employee) {
