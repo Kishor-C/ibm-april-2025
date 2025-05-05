@@ -1,0 +1,28 @@
+Docker
+
+
+docker images # listing the images
+docker container ls # listing the containers
+
+docker pull hello-world # pulls a c program
+docker run hello-world # runs the hello-world c program
+
+# pulling the nginx - reverse proxy server
+docker pull nginx
+docker images # to see the nginx image
+docker run nginx # runs in attached mode
+docker run -d nginx # runs in detached mode
+docker container ls # to list the container
+# to see their logs
+docker container logs <<container-id>>
+# to login to the container
+docker container exec -it <<container-id>> /bin/bash
+curl http://localhost
+
+# start, stop, restart, remove the conainer
+docker container stop <<container-id>>
+docker container restart <<container-id>>
+docker container start <<container-id>>
+docker container rm <<container-id>> 
+docker container rm -f <<container-id>>
+
