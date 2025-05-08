@@ -1,0 +1,137 @@
+Python:
+==============
+Tuple - ( )
+List - [ ]
+Set - { }
+Dictionary - { key : value }
+for loop syntax 
+while loop syntax
+If & Else - if syntax
+Function - syntax
+==========================================
+Git:
+==========================================
+fetch vs pull difference
+understand the meaning of following commands
+git branch -D
+git checkout
+git add
+git commit
+git push
+git pull
+git fetch
+git clone
+git log
+git init
+git merge
+git reset
+=============================================
+Junit:
+understand the meaning of following annotations
+@Test
+@BeforeAll
+@AfterAll
+@BeforeEach
+@AfterEach
+@ParameterizedTest
+================================================
+Design patterns:
+learn the definitions of following design patters:
+singleton
+factory
+adapter
+builder 
+prototype
+================================================
+Typescript
+===============
+different types - number, boolean, string, [], any, undefined, 
+React.js
+==================================================
+props vs state difference
+class vs functional components
+how state is used in class 
+how state is used in function component
+axios library
+react-router-dom - BrowserRouter, Link, Routes, Route, useParams, useNavigate()
+useEffect() hook in react - alternative to componentDidMount life cycle
+================================================================
+Java EE 8
+===============================================================
+Web container vs EJB container
+Web app vs Enterprise application
+ejb-jar.xml vs web.xml
+JAX-RS annotations - @PUT, @GET, @POST and etc
+Web socket event names - connect, close, message
+====================================================================
+Servlets & JSP
+==================================================
+Java EE architecture -> Web container
+MVC architecture
+ServletConfig vs ServletContext
+Lifecycle methods of Servlet - init, service, destory
+Servlet interface - 5 methods
+GenericServlet - abstract class - service() is abstract
+HttpServlet - abstract class - no abstract methods
+<load-on-startup> of Servlet
+JSP building blocks - directive, scriptlet, action tags, inbuilt objects
+<jsp:include vs <%@include
+RequestDispatcher - sending request to any other web resource(Servlets, JSP, HTML)
+Methods in RequestDispatcher - include & forward
+RequestDispatcher rd = request.getRequestDispatcher("....")
+HttpSession
+Default scope in JSP - page scope, other scopes are request, session, application
+=================================================
+JDBC
+======================
+Remember the method names & their return types
+Remember on which object a method is invoked
+===============================================
+Spring Framework & Spring Boot
+Annotations - @Component, @Service, @Repository, @Controller, @RestController, @Configuration,
+	@Autowired, @Bean, @Value, ....
+BeanFactory vs ApplicationContext
+Bean scopes & life cycle of beans
+HTTP status codes
+Spring Security annotations with OAUTH & JWT
+Front controller in Spring MVC
+=====================================
+Core Java
+=================================
+Coding snippet 
+	- Inheritance, super keyword, constructor invocation from subclass
+	- Exception handling try, catch, finally with return statements
+	- Exception handling while overriding with throws rules
+	- Exception handing with multi-catch while handling subclass/super class exception rules
+	- String class immutability which string is created in constant & non-constant pool
+	- Invoking static methods from the subclass reference what is the result
+	- can you override static methods
+	- final variables, methods & classes 
+	- operator questions, loops
+	- Collection Framework Set related questions
+
+
+
+Note: Prepare other topics as well looking at the TOC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
